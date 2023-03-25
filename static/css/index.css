@@ -95,18 +95,7 @@ body::-webkit-scrollbar {
 
 
 
-/*615 total*/
-/*
-50px padding on either end (1000px)
 
-515px left
-20 gaps (40px)
-
-450
-40
-100
-590
-*/
 .grid {
     display: flex;
     flex-wrap: wrap;
