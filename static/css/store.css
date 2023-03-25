@@ -120,7 +120,7 @@ body::-webkit-scrollbar {
 
 .card {
     background-color: white;
-    
+    font-size:14px;
     height: 150px;
     width: 150px;
 
@@ -144,7 +144,13 @@ body::-webkit-scrollbar {
     padding:12.5%;
 }
 
-
+.product-thumbnail {
+    display: block;
+    max-width:75px;
+    max-height:75px;
+    width: auto;
+    height: auto;
+}
 
 /*
 .grid {

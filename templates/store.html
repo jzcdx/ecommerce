@@ -33,8 +33,9 @@
                             <div class="card">
                                 <div class="cell">
                                     <label class="card_name">{{ product["name"] }}</label>
-                                    <p>card description</p>
+                                    <!--<p>card description</p>-->
                                     <label>{{ product["price"] }}</label>
+                                    <img class="product-thumbnail" src="{{ product['picture'] }}"></img>
                                 </div>
                             </div>
                         {% endfor %}
