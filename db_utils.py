@@ -1,10 +1,7 @@
 from sqlalchemy import create_engine, URL, text, Table, MetaData, Column, Integer, String, Double, select, delete, update, insert
 import os
 
-
 class DBH: #database helper
-    engine = None
-
     def __init__(self):
         url_object = URL.create(
             "postgresql+psycopg2",
@@ -32,9 +29,8 @@ class DBH: #database helper
             res = conn.execute(stmt)
             rows = res.mappings().all()
             conn.close();
-
+            
             return rows;
-"""
+
 dbh = DBH()
-dbh.get_products();
-"""
+print(type(dbh.get_products()[0]));

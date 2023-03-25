@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Super Cool Ecommerce Store</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/store.css') }}">
     </head>
     <body>
         <div class="master-container">
@@ -29,26 +29,27 @@
             <div class="main-area">
                 <div class="items-container">
                     <div class="grid">
-                        <div class="card"><div class="cell">
-                            <label class="card_name">card title</label><p>card description</p>
-                        </div></div>
+                        {% for product in products %}
+                            <div class="card">
+                                <div class="cell">
+                                    <label class="card_name">{{ product["name"] }}</label>
+                                    <p>card description</p>
+                                    <label>{{ product["price"] }}</label>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <!--
+                        <div class="card">
+                            <div class="cell">
+                                <label class="card_name">card title</label>
+                                <p>card description</p>
+                            </div>
+                        </div>
                         
                         <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
                         <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
                         
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-                        <!--<div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
-
-                        <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
                         <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
                         <div class="card"><div class="cell"><label class="card_name">card title</label><p>card description</p></div></div>
                         -->
