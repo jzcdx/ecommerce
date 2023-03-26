@@ -32,5 +32,4 @@ class DBH: #database helper
             
             return rows;
 
-dbh = DBH()
-print(type(dbh.get_products()[0]));
+#dbh = DBH()

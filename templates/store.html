@@ -32,10 +32,14 @@
                         {% for product in products %}
                             <div class="card">
                                 <div class="cell">
-                                    <label class="card_name">{{ product["name"] }}</label>
                                     <!--<p>card description</p>-->
-                                    <label>{{ product["price"] }}</label>
-                                    <img class="product-thumbnail" src="{{ product['picture'] }}"></img>
+                                    <div class="thumbnail-div">
+                                        <img class="product-thumbnail" src="{{ product['picture'] }}">
+                                    </div>
+                                    <div class="info-container">
+                                        <label>${{ product["price"] }}</label>
+                                        <label class="card_name">{{ product["name"] }}</label>
+                                    </div>
                                 </div>
                             </div>
                         {% endfor %}
@@ -58,7 +62,6 @@
                 </div>
             </div>
 
-            <img src="static\assets\hats\dapper snapback.png"></img>
         </div>
 
     </body>
