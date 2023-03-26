@@ -30,13 +30,15 @@
                 <div class="items-container">
                     <div class="grid">
                         {% for product in products %}
-                            <div class="card">
+                            <div class="card" id="product_{{ product['id'] }}">
                                 <div class="cell">
                                     <!--<p>card description</p>-->
+                                    
                                     <div class="thumbnail-div">
                                         <img class="product-thumbnail" src="{{ product['picture'] }}">
                                     </div>
                                     <div class="info-container">
+                                        
                                         <label>${{ product["price"] }}</label>
                                         <label class="card_name">{{ product["name"] }}</label>
                                     </div>
@@ -63,6 +65,6 @@
             </div>
 
         </div>
-
+    <script src="{{ url_for('static', filename='js/store.js') }}"></script>
     </body>
 </html>
