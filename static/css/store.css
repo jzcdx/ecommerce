@@ -100,15 +100,10 @@ body::-webkit-scrollbar {
     display: flex;
     flex-wrap: wrap;
     justify-content:flex-start;
-    /*flex-direction:row;*/
     gap: 25px;  
     padding: 0px;
-    /*top gap width worth of background*/
-    
-    /*max-width:800px;*/ /* the addition of 100px allows for one gap width of background on either side 62.5vw is the actual size of the box*/
-    /*min-width: calc(450px + 50px + 100px);*/
+
     max-width: calc(450px + 50px);
-    /*flex-basis: calc(450px + 50px);*/ /*don't add padding to this*/
     flex-shrink: 1;
 
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
