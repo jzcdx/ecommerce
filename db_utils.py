@@ -42,8 +42,5 @@ class DBH: #database helper
                 row = rows[0];
             else:
                 row = None;
-
-            
-            
             return row;
 #dbh = DBH()
