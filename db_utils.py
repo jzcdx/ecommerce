@@ -23,7 +23,7 @@ class DBH: #database helper
             Column("picture", String),
         )
 
-    def get_products(self):
+    def get_all_products(self):
         with self.engine.connect() as conn:
             stmt = select(self.product)
             res = conn.execute(stmt)
@@ -32,4 +32,18 @@ class DBH: #database helper
             
             return rows;
 
+    def get_product(self, product_id):
+        with self.engine.connect() as conn:
+            stmt = select(self.product).where(self.product.c.id == product_id);
+            res = conn.execute(stmt)
+            rows = res.mappings().all()
+            conn.close();
+            if (rows):
+                row = rows[0];
+            else:
+                row = None;
+
+            
+            
+            return row;
 #dbh = DBH()
