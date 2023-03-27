@@ -23,5 +23,9 @@ def product_page(product_id):
 def error_page():
     return render_template("error.html");
 
+@application.route("/addToCart/<int:product_id>")
+def add_to_cart(product_id):
+    print("adding " + product_id + " to cart")
+
 if __name__ == "__main__":
     application.run(debug=True, use_reloader=True, threaded=True)

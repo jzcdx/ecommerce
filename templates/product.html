@@ -19,7 +19,9 @@
                 <label>{{ product['name'] }}</label>
                 <label>${{ product['price'] }}</label>
                 <label>{{ product['stock'] }} in stock</label>
+                <button onclick="addToCart({{ product['id'] }})">add to cart</button>
             </div>
         </div>
+    <script src="{{ url_for('static', filename='js/product.js') }}"></script>
     </body>
 </html>
