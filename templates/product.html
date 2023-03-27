@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css')}}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
     <body>
         <img src="{{url_for('static', filename='assets/hats/cowboy.png')}}"></img> <!-- this is the way to go -->
@@ -19,7 +20,7 @@
                 <label>{{ product['name'] }}</label>
                 <label>${{ product['price'] }}</label>
                 <label>{{ product['stock'] }} in stock</label>
-                <button onclick="addToCart({{ product['id'] }})">add to cart</button>
+                <button onclick="addToCart({{ product['id'] }}, '{{ product["name"] }}')">add to cart</button>
             </div>
         </div>
     <script src="{{ url_for('static', filename='js/product.js') }}"></script>
