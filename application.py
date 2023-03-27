@@ -1,6 +1,9 @@
-from flask import Flask, render_template, redirect, request, jsonify
+from flask import Flask, render_template, redirect, request, jsonify, session
 from db_utils import DBH
+import secrets
+
 application = Flask(__name__)
+application.secret_key = secrets.token_urlsafe(16)
 
 @application.context_processor
 def utility_processor():
@@ -34,11 +37,25 @@ def error_page():
 
 @application.route("/addToCart", methods=["POST"])
 def add_to_cart():
+    if (session.get("cart") == None):
+        session["cart"] = {}
+    
     if request.method == "POST":
         desc_data = request.get_json()
-        product_name = desc_data["product_name"]
-        product_id = desc_data["product_id"]
-        print("adding " , product_id , " to cart " , product_name);
+        
+        name = desc_data["product_name"]
+        id = str(desc_data["product_id"])
+        qtty = int(desc_data["product_qtty"])
+        
+        cart = session["cart"]
+        if id not in cart:
+            cart[id] = qtty
+        else:
+            cart[id] += qtty;
+        
+        #save cart back in our session
+        session["cart"] = cart
+        print("cur cart: " , cart);
     results = {'updated': 'true'}
     return jsonify(results);
 

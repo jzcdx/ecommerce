@@ -10,7 +10,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
     <body>
-        <<!--img src="{{url_for('static', filename='assets/hats/cowboy.png')}}"></img>--> <!-- this is the way to go -->
+        <!--img src="{{url_for('static', filename='assets/hats/cowboy.png')}}"></img>--> <!-- this is the way to go -->
         
         <div class="master-container">
             <div class="image-container">
@@ -29,6 +29,7 @@
                 <button onclick="addToCart({{ product['id'] }}, '{{ product['name'] }}', {{product['stock']}})">add to cart</button>
             </div>
         </div>
-    <script src="{{ url_for('static', filename='js/product.js') }}"></script>
+        
+        <script src="{{ url_for('static', filename='js/product.js') }}"></script>
     </body>
 </html>
