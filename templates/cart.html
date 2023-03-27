@@ -5,17 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
     </head>
     <body>
-        
         <h1>Your Cart</h1>
         <div class="cart-area">
         {% if cart is not none %}
             <div class="items-div">
                 {% for item in cart %}
                     <div class="single-item-div">
-                        <label>{{ item["name"] }} - {{ item["price"] }}</label>
-                        <label> qtty: {{ item["qtty"]}} | total: {{ item["total"]}} </label>
+                        <div class="thumbnail-container">
+                            <img class="img-thumbnail" src="{{ url_for('static', filename=img_url_trim(item['picture'])) }}"></img>
+                        </div>
+                        <div class="single-item-info">
+                            <label>{{ item["name"] }} - {{ item["price"] }}</label>
+                            <label> qtty: {{ item["qtty"]}} | total: {{ item["total"]}} </label>
+                        </div>
+                        <button>Remove</button>
                     </div>
                 {% endfor %}
             </div>
@@ -23,7 +29,7 @@
             <h1>Add some items to see your cart</h1>
         {% endif %}
         <div>
-        
+
         <div class="summary-area">
         </div>
     </body>
