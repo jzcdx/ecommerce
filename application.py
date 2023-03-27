@@ -8,11 +8,11 @@ application.secret_key = secrets.token_urlsafe(16)
 
 @application.context_processor
 def utility_processor():
-    def jinja_img_url_trim(url):
+    def img_url_trim(url):
         dirs = url.split("\\");
         trimmed_url = '/'.join(dirs[1:4]);
         return trimmed_url
-    return dict(jinja_img_url_trim=jinja_img_url_trim)
+    return dict(img_url_trim=img_url_trim)
 
 
 @application.route("/")
@@ -38,8 +38,10 @@ def error_page():
 
 @application.route("/cart")
 def showCart():
+    #returns a LIST of DICTS representing the db row PLUS: TOTAL and order QTTY
+    cart_info = util.get_cart_info(session.get("cart")) 
     
-    return render_template("cart.html", cart=session["cart"]);
+    return render_template("cart.html", cart=cart_info);
 
 @application.route("/addToCart", methods=["POST"])
 def add_to_cart():
