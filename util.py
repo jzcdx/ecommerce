@@ -15,6 +15,8 @@ def get_product_rows(product_dict):
     return res_list
 
 def get_cart_info(product_info):
+    if (not product_info):
+        return None; 
     print("getting cart info")
     res_dict = {"total": 0, "items": 0};
     

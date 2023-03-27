@@ -33,7 +33,10 @@
             </div>
 
             <div class="summary-area">
-                stuff
+                {% if info is not none %}
+                    <labels>Order Total: ${{ info["total"] }}</labels>
+                    <labels>Number of Items: {{ info["items"] }}</labels>
+                {% endif %}
             </div>
         </div>
     </body>
