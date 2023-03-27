@@ -14,9 +14,14 @@ def get_product_rows(product_dict):
         res_list.append(cur)
     return res_list
 
-def get_cart_info(product_dict):
+def get_cart_info(product_info):
     print("getting cart info")
-    return 'hi there'
+    res_dict = {"total": 0, "items": 0};
+    
+    for product in product_info:
+        res_dict["total"] += product["total"]
+        res_dict["items"] += product["qtty"]
+    return res_dict
 
 """
 pd = {1: 2, 3: 5}
