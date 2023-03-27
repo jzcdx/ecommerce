@@ -16,10 +16,8 @@
             <div class="image-container">
                 <img src="{{ url_for('static', filename=jinja_img_url_trim(product['picture'])) }}" />
             </div>
+            
             <div class="info-container">
-                
-                {{ product['picture'] }}
-                {{ jinja_img_url_trim(product["picture"]) }}
                 <label>{{ product['name'] }}</label>
                 <label>${{ product['price'] }}</label>
                 <label>{{ product['stock'] }} in stock</label>
@@ -28,7 +26,7 @@
                         <input id="qttyInput" type="number" value="1" min="0"></input>
                     <button onclick="increaseQtty()">+</button>
                 </div>
-                <button onclick="addToCart({{ product['id'] }}, '{{ product["name"] }}')">add to cart</button>
+                <button onclick="addToCart({{ product['id'] }}, '{{ product['name'] }}', {{product['stock']}})">add to cart</button>
             </div>
         </div>
     <script src="{{ url_for('static', filename='js/product.js') }}"></script>

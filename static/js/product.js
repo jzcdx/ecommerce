@@ -1,6 +1,7 @@
-function addToCart(productId, productName) {
+function addToCart(productId, productName, productStock) {
     var productQtty = document.getElementById("qttyInput").value
-    if (productQtty > 0) {
+    
+    if (productQtty > 0 && productStock >= productQtty) { /*should probably make the stock check server side later too lol*/
         //console.log("adding " + productId + " to cart " + productName);
         var newCartItemData = {
             "product_qtty": productQtty,
@@ -21,6 +22,11 @@ function addToCart(productId, productName) {
         });
     } else {
         //console.log("req not sent, prod qtty <= 0");
+        if (productQtty <= 0) {
+            console.log("cart request qtty <= 0");
+        } else if (productStock < productQtty) {
+            console.log("not enough stock");
+        }
     }
 }
 
@@ -34,7 +40,7 @@ function increaseQtty() {
 function decreaseQtty() {
     var qttyInput = document.getElementById("qttyInput");
     var curQtty = parseInt(qttyInput.value);
-    
+
     if (curQtty > 1) {
         qttyInput.value = curQtty - 1;
     }
