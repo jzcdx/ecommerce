@@ -20,6 +20,11 @@
                 <label>{{ product['name'] }}</label>
                 <label>${{ product['price'] }}</label>
                 <label>{{ product['stock'] }} in stock</label>
+                <div class="qttyDiv">
+                    <button onclick="decreaseQtty()">-</button>
+                        <input id="qttyInput" type="number" value="1" min="0"></input>
+                    <button onclick="increaseQtty()">+</button>
+                </div>
                 <button onclick="addToCart({{ product['id'] }}, '{{ product["name"] }}')">add to cart</button>
             </div>
         </div>
