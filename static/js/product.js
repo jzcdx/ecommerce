@@ -1,7 +1,7 @@
 function addToCart(productId, productName) {
     var productQtty = document.getElementById("qttyInput").value
     if (productQtty > 0) {
-        console.log("adding " + productId + " to cart " + productName);
+        //console.log("adding " + productId + " to cart " + productName);
         var newCartItemData = {
             "product_qtty": productQtty,
             "product_name": productName, 
@@ -20,7 +20,7 @@ function addToCart(productId, productName) {
             } 
         });
     } else {
-        console.log("req not sent, prod qtty <= 0");
+        //console.log("req not sent, prod qtty <= 0");
     }
 }
 
@@ -34,6 +34,7 @@ function increaseQtty() {
 function decreaseQtty() {
     var qttyInput = document.getElementById("qttyInput");
     var curQtty = parseInt(qttyInput.value);
+    
     if (curQtty > 1) {
         qttyInput.value = curQtty - 1;
     }

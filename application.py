@@ -2,6 +2,15 @@ from flask import Flask, render_template, redirect, request, jsonify
 from db_utils import DBH
 application = Flask(__name__)
 
+@application.context_processor
+def utility_processor():
+    def jinja_img_url_trim(url):
+        dirs = url.split("\\");
+        trimmed_url = '/'.join(dirs[1:4]);
+        return trimmed_url
+    return dict(jinja_img_url_trim=jinja_img_url_trim)
+
+
 @application.route("/")
 def store():
     dbh = DBH();

@@ -10,13 +10,16 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
     <body>
-        <img src="{{url_for('static', filename='assets/hats/cowboy.png')}}"></img> <!-- this is the way to go -->
-        <img src="{{ product['picture'] }}"></img>
+        <<!--img src="{{url_for('static', filename='assets/hats/cowboy.png')}}"></img>--> <!-- this is the way to go -->
+        
         <div class="master-container">
             <div class="image-container">
+                <img src="{{ url_for('static', filename=jinja_img_url_trim(product['picture'])) }}" />
             </div>
             <div class="info-container">
+                
                 {{ product['picture'] }}
+                {{ jinja_img_url_trim(product["picture"]) }}
                 <label>{{ product['name'] }}</label>
                 <label>${{ product['price'] }}</label>
                 <label>{{ product['stock'] }} in stock</label>
