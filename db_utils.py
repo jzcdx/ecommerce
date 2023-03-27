@@ -36,6 +36,8 @@ class DBH: #database helper
         with self.engine.connect() as conn:
             stmt = select(self.product).where(self.product.c.id == product_id);
             res = conn.execute(stmt)
+            #print(type(res.mappings().all()))
+            
             rows = res.mappings().all()
             conn.close();
             if (rows):
