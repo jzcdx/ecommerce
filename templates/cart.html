@@ -8,29 +8,33 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
     </head>
     <body>
-        <h1>Your Cart</h1>
-        <div class="cart-area">
-        {% if cart is not none %}
-            <div class="items-div">
-                {% for item in cart %}
-                    <div class="single-item-div">
-                        <div class="thumbnail-container">
-                            <img class="img-thumbnail" src="{{ url_for('static', filename=img_url_trim(item['picture'])) }}"></img>
-                        </div>
-                        <div class="single-item-info">
-                            <label>{{ item["name"] }} - {{ item["price"] }}</label>
-                            <label> qtty: {{ item["qtty"]}} | total: {{ item["total"]}} </label>
-                        </div>
-                        <button>Remove</button>
+        <h1 class="main-heading">Your Cart</h1>
+        <div class="main-area">
+            
+            <div class="cart-area">
+                {% if cart is not none %}
+                    <div class="items-div">
+                        {% for item in cart %}
+                            <div class="single-item-div">
+                                <div class="thumbnail-container">
+                                    <img class="img-thumbnail" src="{{ url_for('static', filename=img_url_trim(item['picture'])) }}"></img>
+                                </div>
+                                <div class="single-item-info">
+                                    <label>{{ item["name"] }} - {{ item["price"] }}</label>
+                                    <label> qtty: {{ item["qtty"]}} | total: {{ item["total"]}} </label>
+                                </div>
+                                <button>Remove</button>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                {% else %}
+                    <h1>Add some items to see your cart</h1>
+                {% endif %}
             </div>
-        {% else %}
-            <h1>Add some items to see your cart</h1>
-        {% endif %}
-        <div>
 
-        <div class="summary-area">
+            <div class="summary-area">
+                stuff
+            </div>
         </div>
     </body>
 </html>
