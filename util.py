@@ -1,7 +1,7 @@
 from db_utils import DBH
 import decimal
 #general utilities
-def get_cart_info(product_dict):
+def get_product_rows(product_dict):
     if (not product_dict):
         return None;
     
@@ -13,6 +13,10 @@ def get_cart_info(product_dict):
         cur["qtty"] = product_dict[id]
         res_list.append(cur)
     return res_list
+
+def get_cart_info(product_dict):
+    print("getting cart info")
+    return 'hi there'
 
 """
 pd = {1: 2, 3: 5}

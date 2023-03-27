@@ -59,6 +59,11 @@ body::-webkit-scrollbar {
     padding-right:25px;
 }
 
+.navbar * {
+    text-decoration:none;
+    color:inherit;
+}
+
 .logo-container {
     height:75%;
     width:100%;

@@ -39,9 +39,10 @@ def error_page():
 @application.route("/cart")
 def showCart():
     #returns a LIST of DICTS representing the db row PLUS: TOTAL and order QTTY
-    cart_info = util.get_cart_info(session.get("cart")) 
-    
-    return render_template("cart.html", cart=cart_info);
+    product_info = util.get_product_rows(session.get("cart")) #info of individual products
+    cart_info = util.get_cart_info(product_info) #info of the cart as a whole (total price of everything)
+
+    return render_template("cart.html", cart=product_info);
 
 @application.route("/addToCart", methods=["POST"])
 def add_to_cart():
