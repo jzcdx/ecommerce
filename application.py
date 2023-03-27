@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, jsonify, session
 from db_utils import DBH
+import util
 import secrets
 
 application = Flask(__name__)
@@ -34,6 +35,11 @@ def product_page(product_id):
 @application.route("/error")
 def error_page():
     return render_template("error.html");
+
+@application.route("/cart")
+def showCart():
+    
+    return render_template("cart.html", cart=session["cart"]);
 
 @application.route("/addToCart", methods=["POST"])
 def add_to_cart():
