@@ -11,7 +11,20 @@
     </head>
     <body>
         <!--img src="{{url_for('static', filename='assets/hats/cowboy.png')}}"></img>--> <!-- this is the way to go -->
-        
+        <div class="top-bar">
+            <div class="logo-container">
+                <h1><a href="/">Hypothetical Hats</a></h1>
+            </div>
+            <div class="navbar-container">
+                <ul class="navbar">
+                    <li><b><a>thing 1</a></b></li>
+                    <li><b><a>thing 2</a></b></li>
+                    <li><b><a>thing 3</a></b></li>    
+                    <li><b><a>thing 4</a></b></li>
+                    <li><b><a href="/cart">cart</a></b></li>    
+                </ul>
+            </div>
+        </div>
         <div class="master-container">
             <div class="image-container">
                 <img src="{{ url_for('static', filename=img_url_trim(product['picture'])) }}" />
