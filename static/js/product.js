@@ -16,7 +16,8 @@ function addToCart(productId, productName, productStock) {
             dataType: 'json', 
             success: function(result) { //when the response comes back and it's successful, run the code below
                 //This updates the description with the new value from the textarea
-                console.log("request made");
+                var addedLabel = document.getElementById("added-label")
+                addedLabel.style.display = "block";
             } 
         });
     } else {
