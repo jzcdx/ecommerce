@@ -2,7 +2,6 @@ function addToCart(productId, productName, productStock) {
     var productQtty = document.getElementById("qttyInput").value
     
     if (productQtty > 0 && productStock >= productQtty) { /*should probably make the stock check server side later too lol*/
-        //console.log("adding " + productId + " to cart " + productName);
         var newCartItemData = {
             "product_qtty": productQtty,
             "product_name": productName, 
