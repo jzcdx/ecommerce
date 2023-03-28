@@ -116,3 +116,8 @@ body::-webkit-scrollbar {
     justify-content:center;
     flex-direction:column;
 }
+
+.logo-container * {
+    text-decoration:none;
+    color:inherit;
+}
