@@ -15,7 +15,7 @@ body {
     width:50%;
     height:100%;
     
-    background-color:gainsboro;
+    background-color:#fdffff;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -24,7 +24,7 @@ body {
 .image-container {
     width:50%;
 
-    background-color:gainsboro;
+    background-color:#fdffff;
 
     justify-content:center;
     align-items:center;
