@@ -21,7 +21,6 @@ function addToCart(productId, productName, productStock) {
             } 
         });
     } else {
-        //console.log("req not sent, prod qtty <= 0");
         if (productQtty <= 0) {
             console.log("cart request qtty <= 0");
         } else if (productStock < productQtty) {
