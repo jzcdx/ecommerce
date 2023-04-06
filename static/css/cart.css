@@ -8,10 +8,6 @@ body {
     flex-direction: column;
 }
 
-.main-heading {
-    margin-left:15px;
-}
-
 .items-div {
     background-color:rgb(44, 44, 44);
     width:100%;
@@ -82,4 +78,24 @@ body {
     width:40%;
     height:80%;
     background-color:gainsboro;
+}
+
+.main-heading {
+    margin-left:15px;
+    margin-bottom:5px;
+}
+
+.top-bar {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.home-href {
+    text-decoration:none;
+    color:inherit;
+    
+    padding-top:0px;
+    margin-left:15px;
 }

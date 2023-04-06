@@ -18,6 +18,7 @@ function addToCart(productId, productName, productStock) {
                 //This updates the description with the new value from the textarea
                 var addedLabel = document.getElementById("added-label")
                 addedLabel.style.display = "block";
+                location.href = '/';
             } 
         });
     } else {

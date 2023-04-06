@@ -4,13 +4,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Cart</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
     </head>
     <body>
-        <h1 class="main-heading">Your Cart</h1>
+        <div class="top-bar">
+            <h1 class="main-heading">Your Cart</h1>
+            <a href="/" class="home-href">Hypothetical Hats</a>
+        </div>
         <div class="main-area">
-            
             <div class="cart-area">
                 {% if cart is not none %}
                     <div class="items-div">
